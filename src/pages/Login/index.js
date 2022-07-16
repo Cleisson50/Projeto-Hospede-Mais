@@ -4,6 +4,7 @@ import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
+import RedefinirSenha from "../Redefinir";
 
 
 export default function Login({ navigation }) {
@@ -59,7 +60,7 @@ export default function Login({ navigation }) {
     }, []);
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Task</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
@@ -93,6 +94,12 @@ export default function Login({ navigation }) {
                 Não está registrado?
                 <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
                     Inscreva-se agora
+                </Text>
+            </Text>
+            <Text style={styles.registration}>
+                Esqueceu sua senha?
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("RedefinirSenha")}>
+                    Redefinir
                 </Text>
             </Text>
             <View style={{ height: 100 }} />

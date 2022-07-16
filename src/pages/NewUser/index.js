@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 export default function NewUser({ navigation }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [nome, setNome] = useState("");
     const [errorRegister, setErrorRegister] = useState("");
 
     const register = () => {
@@ -27,8 +28,9 @@ export default function NewUser({ navigation }) {
     }
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.container}>
+        <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Criar uma nova conta</Text>
+            {/* <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} /> */}
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorRegister === true
