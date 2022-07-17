@@ -35,7 +35,7 @@ export default function Task({ navigation, route }) {
     return (
         <View style={styles.container}>
             <View>
-                {usuario}
+                
             </View>
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>
