@@ -5,6 +5,7 @@ import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { FcGoogle } from 'react-icons/fc';
 

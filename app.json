@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.cleisson50.Projeto_teste"
     },
     "web": {
       "favicon": "./assets/favicon.png"
