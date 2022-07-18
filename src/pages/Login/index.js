@@ -92,9 +92,9 @@ export default function Login({ navigation }) {
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
-                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
+            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
                     Inscreva-se agora
-                </Text>
+            </Text>
             </Text>
             <Text style={styles.registration}>
                 Esqueceu sua senha?
