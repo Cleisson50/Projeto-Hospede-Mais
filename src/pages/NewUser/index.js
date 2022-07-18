@@ -4,8 +4,7 @@ import styles from "./styles";
 import { collection, getDocs } from "firebase/firestore";
 import firebase from "../../config/firebaseConfig";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { MaskedTextInput } from "react-native-mask-text";
 
 export default function NewUser({ navigation }) {
     const database = firebase.firestore()
@@ -40,7 +39,7 @@ export default function NewUser({ navigation }) {
             <Text style={styles.title}>Criar uma nova conta</Text>
             <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} />
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <TextInput style={styles.input} autoComplete="postal-address-country" maxLength={18} keyboardType="phone-pad" placeholder="Insira seu número" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
+            <MaskedTextInput style={styles.input} mask="(99) 99999-9999"  placeholder="Insira seu número" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorRegister === true
                 ?

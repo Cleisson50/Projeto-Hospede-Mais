@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   linkSubscribe:{
     color: "#1877f2",
     fontSize:16,
+    marginLeft: 10
   }
 });
 

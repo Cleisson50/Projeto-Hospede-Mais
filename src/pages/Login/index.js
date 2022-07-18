@@ -91,12 +91,18 @@ export default function Login({ navigation }) {
             <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
                 <Text style={styles.textButtonLogin}>Login com Google</Text>
             </TouchableOpacity>
-            <Text style={styles.registration}>Não está registrado?</Text>
-            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>Inscreva-se agora</Text>
-
-            <Text style={styles.registration}>Esqueceu sua senha?</Text>
-            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("RedefinirSenha")}>Redefinir</Text>
-
+            <Text style={styles.registration}>
+                Não está registrado?
+            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
+                    Inscreva-se agora
+            </Text>
+            </Text>
+            <Text style={styles.registration}>
+                Esqueceu sua senha?
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("RedefinirSenha")}>
+                    Redefinir
+                </Text>
+            </Text>
             <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     );
