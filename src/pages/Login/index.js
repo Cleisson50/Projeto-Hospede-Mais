@@ -6,6 +6,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
 
+import { FcGoogle } from 'react-icons/fc';
+
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState("");
@@ -61,7 +63,7 @@ export default function Login({ navigation }) {
 
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
-            <Text style={styles.title}>Task</Text>
+            <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorLogin === true
@@ -87,8 +89,8 @@ export default function Login({ navigation }) {
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
             }
-            <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Text style={styles.textButtonLogin}>Login com Google</Text>
+            <TouchableOpacity style={styles.buttonLogin2} onPress={loginGoogle}>
+            <FcGoogle size={22}/> <Text style={styles.textLogin}>Login com Google</Text>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
