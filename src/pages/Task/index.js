@@ -4,6 +4,7 @@ import firebase from "../../config/firebaseConfig"
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./style";
 import { collection, getDocs } from "firebase/firestore";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Task({ navigation, route }) {
     const [email, setEmail] = useState("");
