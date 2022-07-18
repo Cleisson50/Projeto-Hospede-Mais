@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   linkLogin: {
     color: "#1877f2",
     fontSize: 16,
+    marginLeft: 15
   }
 });
 
