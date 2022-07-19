@@ -53,9 +53,9 @@ export default function Task({ navigation, route }) {
                 data={users}
                 renderItem={({ item }) => (
                     <View style={{ height: 50, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                        <Text>User Name: {item.email}</Text>
+                        <Text>User Email: {item.email}</Text>
                         <Text>User Name: {item.name}</Text>
-                        <Text>User Email: {item.telefone}</Text>
+                        <Text>User Telefone: {item.telefone}</Text>
                     </View>
                 )}
             />
