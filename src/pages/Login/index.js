@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function Login({ navigation }) {
@@ -61,7 +62,7 @@ export default function Login({ navigation }) {
 
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
-            <Text style={styles.title}>Task</Text>
+            <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorLogin === true
@@ -88,7 +89,10 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             }
             <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Text style={styles.textButtonLogin}>Login com Google</Text>
+            <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaEbmPq1vaFxOWuVOfhCoLSGspGZvC53pMQ&usqp=CAU' }} style={{ width: 30, height: 30, borderRadius: 50, }}/>
+            <View>
+            <Text style={styles.textLogin}>Login com Google</Text>
+            </View>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
@@ -102,7 +106,6 @@ export default function Login({ navigation }) {
                     Redefinir
                 </Text>
             </Text>
-            <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     );
 }
