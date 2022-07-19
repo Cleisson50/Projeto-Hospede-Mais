@@ -3,14 +3,14 @@ import { Platform, StyleSheet } from "react-native"
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#EEE9E9',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Platform.OS === "ios" ? 0 : 50,
   },
   title: {
     fontSize: 22,
-    color: "#F92E6A",
+    color: "#000000",
     marginBottom: 10,
     fontWeight: "bold",
   },
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 50,
     borderBottomWidth: 1,
-    borderBottomColor: "#F92E6A",
+    borderBottomColor: "#000000",
     marginLeft: "auto",
     marginRight: "auto",
     color: "#4d5156",
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F92E6A",
+    backgroundColor: "#482FF7",
     borderRadius: 50,
     marginTop: 30,
   },
@@ -50,10 +50,11 @@ const styles = StyleSheet.create({
   },
   login: {
     marginTop: 20,
-    color: "#4d5156",
+    color:"#000000",
+    fontSize: 16,
   },
   linkLogin: {
-    color: "#1877f2",
+    color: "#0000CD",
     fontSize: 16,
     marginLeft: 15
   }
