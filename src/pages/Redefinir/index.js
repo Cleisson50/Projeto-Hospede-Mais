@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "r
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function RedefinirSenha({ navigation }) {
     const [email, setEmail] = useState("");
