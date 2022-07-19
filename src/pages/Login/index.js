@@ -7,8 +7,6 @@ import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { FcGoogle } from 'react-icons/fc';
-
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState("");
@@ -91,13 +89,13 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             }
             <TouchableOpacity style={styles.buttonLogin2} onPress={loginGoogle}>
-            <FcGoogle size={22}/> <Text style={styles.textLogin}>Login com Google</Text>
+                <Text style={styles.textLogin}>Login com Google</Text>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
-            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
                     Inscreva-se agora
-            </Text>
+                </Text>
             </Text>
             <Text style={styles.registration}>
                 Esqueceu sua senha?

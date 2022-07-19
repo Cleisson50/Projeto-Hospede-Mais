@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   registration:{
     marginTop: 20,
-    color: "#00000",
+    color: "#000000",
     fontSize: 16,
   },
   linkSubscribe:{
