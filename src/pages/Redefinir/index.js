@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, AsyncStorageStatic } from "react-native";
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function RedefinirSenha({ navigation }) {
     const [email, setEmail] = useState("");

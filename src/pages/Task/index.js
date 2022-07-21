@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId, AsyncStorage } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import firebase from "../../config/firebaseConfig"
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./style";
 import { collection, getDocs } from "firebase/firestore";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Task({ navigation, route }) {
     const [users, setUsers] = useState([]);
@@ -18,25 +17,24 @@ export default function Task({ navigation, route }) {
         });
     }
 
-    useEffect(() => {
-        const users = firebase.auth().currentUser;
-        if (users) {
-            database.collection("users").get().then((querySnapshot) => {
-                const list = []
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    list.push(doc.id, doc.data());
-                });
-                setUsers(list)
-            });
-        } else {
-            // No user is signed in.
-        }
-    }, [])
+    // useEffect(() => {
+    //     const user = firebase.auth().currentUser;
+    //     if (user) {
+    //         database.collection("users").get().then((querySnapshot) => {
+    //             const list = []
+    //             querySnapshot.forEach((doc) => {
+    //                 list.push({key: doc.id, ...doc.data()});
+    //             });
+    //             setUsers(list)
+    //         });
+    //     } else {
+    //         console.log("erro")
+    //     }
+    // }, [])
 
     return (
         <View style={styles.container}>
-            <FlatList
+            {/* <FlatList
                 showsVerticalScrollIndicator={false}
                 data={users}
                 renderItem={({ item }) => {
@@ -46,7 +44,7 @@ export default function Task({ navigation, route }) {
                         </View>
                     )
                 }}
-            />
+            /> */}
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>
                     <MaterialCommunityIcons name="location-exit" size={23} color="#f92e6a" />
