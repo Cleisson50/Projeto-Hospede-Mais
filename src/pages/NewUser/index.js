@@ -70,7 +70,6 @@ export default function NewUser({ navigation }) {
                     Login
                 </Text>
             </Text>
-            <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -89,13 +89,16 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             }
             <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Text style={styles.textButtonLogin}>Login com Google</Text>
+            <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaEbmPq1vaFxOWuVOfhCoLSGspGZvC53pMQ&usqp=CAU' }} style={{ width: 30, height: 30, borderRadius: 50, }}/>
+            <View>
+            <Text style={styles.textLogin}>Login com Google</Text>
+            </View>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
-            <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
                     Inscreva-se agora
-            </Text>
+                </Text>
             </Text>
             <Text style={styles.registration}>
                 Esqueceu sua senha?
@@ -103,7 +106,6 @@ export default function Login({ navigation }) {
                     Redefinir
                 </Text>
             </Text>
-            <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     );
 }
