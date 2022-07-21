@@ -39,7 +39,7 @@ export default function NewUser({ navigation }) {
             <Text style={styles.title}>Criar uma nova conta</Text>
             <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} />
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <MaskedTextInput style={styles.input} mask="(99) 99999-9999"  placeholder="Insira seu número" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
+            <MaskedTextInput style={styles.input} mask="(99) 99999-9999"  placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorRegister === true
                 ?
