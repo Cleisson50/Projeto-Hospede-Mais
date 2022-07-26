@@ -1,5 +1,5 @@
 import React, { useId, useState } from "react";
-import { View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, AsyncStorageStatic } from "react-native";
+import { View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { collection, getDocs } from "firebase/firestore";
 import firebase from "../../config/firebaseConfig";
