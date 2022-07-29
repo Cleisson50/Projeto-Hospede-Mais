@@ -16,23 +16,15 @@ export default function NewUser({ navigation }) {
 
     const register = () => {
         firebase.auth().createUserWithEmailAndPassword(email, senha)
-            .then(userCredential => {
-                var usersRef = database.collection("users").doc();
-
-                var setWithMerge = usersRef.set({
-                    name: nome,
-                    email: email,
-                    telefone: telefone
-                }, { merge: false });
+            .then(database => {
+                // Signed in
+                const uid = database.user.uid;
+                const users = firebase.firestore().collection('users');
+                users.doc(uid).set({
+                    name: nome, telefone: telefone
+                });
                 navigation.navigate("Task", { idUser: users.uid })
-                // ...
             })
-            .catch((error) => {
-                setErrorRegister(true)
-                let errorCode = error.code;
-                let errorMessage = error.message;
-                // ..
-            });
     }
 
     return (

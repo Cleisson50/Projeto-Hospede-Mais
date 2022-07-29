@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import firebase from "../../config/firebaseConfig"
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import styles from "./style";
 import { collection, getDocs } from "firebase/firestore";
-import { Button } from "react-native-web";
 import Paho from "paho-mqtt"
 
 export default function Task({ navigation, route }) {
@@ -24,25 +23,25 @@ export default function Task({ navigation, route }) {
             client.subscribe("Porta-IoT"); // As linhas a seguir sao uma tentativa de envio de mensagem
         },
         onFailure: function () {
-            console.log("Besti Besti")
+            console.log("Desconectado")
         },
         //userName: 'emqx',
         //password: 'public',
         //useSSL: true,
     })
 
-    function enviar(){
+    function ligar() {
         const message1 = new Paho.Message("on"); // AGORA funcionando
-            message1.destinationName = "Porta-IoT"; // para testar
+        message1.destinationName = "Porta-IoT"; // para testar
 
-            client.send(message1); // abrir o broker online
+        client.send(message1); // abrir o broker online
     }
 
-    function enviar2(){
+    function desligar() {
         const message1 = new Paho.Message("off"); // AGORA funcionando
-            message1.destinationName = "Porta-IoT"; // para testar
+        message1.destinationName = "Porta-IoT"; // para testar
 
-            client.send(message1); // abrir o broker online
+        client.send(message1); // abrir o broker online
     }
 
 
@@ -57,12 +56,14 @@ export default function Task({ navigation, route }) {
     useEffect(() => {
         const user = firebase.auth().currentUser;
         if (user) {
-            database.collection("users").get().then((querySnapshot) => {
+            database.collection(route.params.idUser).onSnapshot((query) => {
                 const list = []
-                querySnapshot.forEach((doc) => {
-                    list.push({ key: doc.id, ...doc.data() });
+                query.forEach((doc) => {
+                    list.push({ ...doc.data(), id: doc.id });
                 });
                 setUsers(list)
+                console.log(route.params.idUser)
+
             });
         } else {
             console.log("erro")
@@ -71,8 +72,7 @@ export default function Task({ navigation, route }) {
 
     return (
         <View style={styles.container}>
-            {/* <FlatList
-                showsVerticalScrollIndicator={false}
+            <FlatList
                 data={users}
                 renderItem={({ item }) => {
                     return (
@@ -81,12 +81,12 @@ export default function Task({ navigation, route }) {
                         </View>
                     )
                 }}
-            /> */}
-            <TouchableOpacity onPress={enviar}>
+            />
+            <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
                 <Text>Abrir</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={enviar2}>
+            <TouchableOpacity style={styles.buttonDesligar} onPress={desligar}>
                 <Text>Fechar</Text>
             </TouchableOpacity>
 
