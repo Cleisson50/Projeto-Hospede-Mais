@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#EEE9E9',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Platform.OS === "ios" ? 0 : 50,
   },
   title:{
     fontSize: 48,
@@ -30,20 +29,10 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#482FF7",
+    backgroundColor: "#4682B4",
     borderRadius: 50,
     marginTop: 30,
     flexDirection: 'row'
-  },
-  buttonLogin2:{
-    width: 300,
-    height: 50,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 50,
-    marginTop: 30,
-    flexDirection: 'row',
-    border: '1px solid black'
   },
   textButtonLogin:{
     color:"#ffffff",
@@ -52,7 +41,7 @@ const styles = StyleSheet.create({
   },
   textLogin:{
     marginLeft: 10,
-    color:"#000000",
+    color:"#ffffff",
     fontSize: 16,
     fontWeight: "bold",
 

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import { View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoidingView, Platform, AsyncStorageStatic } from "react-native";
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
-
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState("");
@@ -87,8 +86,11 @@ export default function Login({ navigation }) {
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
             }
-            <TouchableOpacity style={styles.buttonLogin2} onPress={loginGoogle}>
-                <Text style={styles.textLogin}>Login com Google</Text>
+            <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
+                <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaEbmPq1vaFxOWuVOfhCoLSGspGZvC53pMQ&usqp=CAU' }} style={{ width: 30, height: 30, borderRadius: 50, }} />
+                <View>
+                    <Text style={styles.textLogin}>Login com Google</Text>
+                </View>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
@@ -102,7 +104,6 @@ export default function Login({ navigation }) {
                     Redefinir
                 </Text>
             </Text>
-            <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     );
 }
