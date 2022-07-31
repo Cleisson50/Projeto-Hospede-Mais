@@ -17,11 +17,13 @@ export default function NewUser({ navigation }) {
     const register = () => {
         firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(database => {
-                // Signed in
                 const uid = database.user.uid;
                 const users = firebase.firestore().collection('users');
                 users.doc(uid).set({
                     name: nome, telefone: telefone
+                });
+                database.user.updateProfile({
+                    displayName: nome,
                 });
                 navigation.navigate("Task", { idUser: users.uid })
             })
@@ -32,7 +34,7 @@ export default function NewUser({ navigation }) {
             <Text style={styles.title}>Criar uma nova conta</Text>
             <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} />
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <MaskedTextInput style={styles.input} mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
+            <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
             {errorRegister === true
                 ?

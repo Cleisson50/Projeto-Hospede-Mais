@@ -14,7 +14,6 @@ export default function Login({ navigation }) {
     const loginFirebase = () => {
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then((userCredential) => {
-                // Signed in
                 let user = userCredential.user;
                 navigation.navigate("Task", { idUser: user.uid })
                 // ...
