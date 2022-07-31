@@ -43,6 +43,30 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
   },
+  buttonLigar: {
+    width: 300,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#4682B4",
+    borderRadius: 50,
+    marginTop: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
+    flexDirection: 'row'
+  },
+  buttonDesligar: {
+    width: 300,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#4682B4",
+    borderRadius: 50,
+    marginTop: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
+    flexDirection: 'row'
+  },
   buttonLogout: {
     width: 60,
     height: 1200,
