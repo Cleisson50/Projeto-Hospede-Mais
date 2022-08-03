@@ -82,13 +82,13 @@ export default function Task({ navigation, route }) {
                     )
                 }}
             />
-            <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
+            {/* <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
                 <Text>Abrir</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.buttonDesligar} onPress={desligar}>
                 <Text>Fechar</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>

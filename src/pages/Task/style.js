@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Directions } from 'react-native-gesture-handler'
 
 const styles = StyleSheet.create({
   container: {
