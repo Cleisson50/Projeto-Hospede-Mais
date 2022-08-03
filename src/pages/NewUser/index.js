@@ -11,19 +11,22 @@ export default function NewUser({ navigation }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [nome, setNome] = useState("");
-    const [telefone, setTelefone] = useState("")
+    const [telefone, setTelefone] = useState("");
+    const [porta, setPorta] = useState("");
     const [errorRegister, setErrorRegister] = useState("");
 
-    const register = () => {
+
+    function register () {
         firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(database => {
                 const uid = database.user.uid;
                 const users = firebase.firestore().collection('users');
                 users.doc(uid).set({
-                    name: nome, telefone: telefone
+                    name: nome, telefone: telefone, porta: porta
                 });
                 database.user.updateProfile({
                     displayName: nome,
+                    photoURL: porta
                 });
                 navigation.navigate("Task", { idUser: users.uid })
             })
@@ -34,8 +37,10 @@ export default function NewUser({ navigation }) {
             <Text style={styles.title}>Criar uma nova conta</Text>
             <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} />
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
+            <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={(text) => setPorta(text)} value={porta} />
             <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
             <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
+
             {errorRegister === true
                 ?
                 <View style={styles.contentAlert}>

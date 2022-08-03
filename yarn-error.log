@@ -39,7 +39,6 @@ npm manifest:
     },
     "dependencies": {
       "@react-icons/all-files": "^4.1.0",
-      "@react-native-async-storage/async-storage": "~1.17.3",
       "@react-native-community/masked-view": "^0.1.11",
       "@react-navigation/bottom-tabs": "^6.3.2",
       "@react-navigation/native": "^6.0.11",
@@ -47,9 +46,12 @@ npm manifest:
       "@react-navigation/stack": "^6.2.2",
       "axios": "^0.27.2",
       "expo": "~45.0.0",
+      "expo-application": "^4.1.0",
+      "expo-random": "^12.2.0",
       "expo-status-bar": "~1.3.0",
       "expo-updates": "~0.13.3",
       "firebase": "8.2.3",
+      "paho-mqtt": "^1.1.0",
       "react": "17.0.2",
       "react-dom": "17.0.2",
       "react-hook-form": "^7.33.1",
@@ -57,6 +59,7 @@ npm manifest:
       "react-native": "0.68.2",
       "react-native-gesture-handler": "~2.2.1",
       "react-native-mask-text": "^0.9.0",
+      "react-native-paho-mqtt": "^0.1.1",
       "react-native-reanimated": "~2.8.0",
       "react-native-safe-area-context": "4.2.4",
       "react-native-screens": "~3.11.1",
@@ -2583,7 +2586,7 @@ Lockfile:
       "mixin-deep" "^1.2.0"
       "pascalcase" "^0.1.1"
   
-  "base64-js@^1.1.2", "base64-js@^1.2.3", "base64-js@^1.3.1", "base64-js@^1.5.1":
+  "base64-js@^1.1.2", "base64-js@^1.2.3", "base64-js@^1.3.0", "base64-js@^1.3.1", "base64-js@^1.5.1":
     "version" "1.5.1"
   
   "better-opn@~3.0.2":
@@ -2917,6 +2920,13 @@ Lockfile:
   "commondir@^1.0.1":
     "version" "1.0.1"
   
+  "compare-urls@^2.0.0":
+    "integrity" "sha512-eCJcWn2OYFEIqbm70ta7LQowJOOZZqq1a2YbbFCFI1uwSvj+TWMwXVn7vPR1ceFNcAIt5RSTDbwdlX82gYLTkA=="
+    "resolved" "https://registry.npmjs.org/compare-urls/-/compare-urls-2.0.0.tgz"
+    "version" "2.0.0"
+    dependencies:
+      "normalize-url" "^2.0.1"
+  
   "compare-versions@^3.4.0":
     "version" "3.6.0"
   
@@ -3218,6 +3228,11 @@ Lockfile:
   "event-target-shim@^5.0.0", "event-target-shim@^5.0.1":
     "version" "5.0.1"
   
+  "events@^1.1.1":
+    "integrity" "sha512-kEcvvCBByWXGnZy6JUlgAp2gBIUjfCAV6P6TgT1/aaQKcmuAEC4OZTV1I4EWQLz2gxZw76atuVyvHhTxvi0Flw=="
+    "resolved" "https://registry.npmjs.org/events/-/events-1.1.1.tgz"
+    "version" "1.1.1"
+  
   "exec-async@^2.2.0":
     "version" "2.2.0"
   
@@ -3243,7 +3258,9 @@ Lockfile:
       "snapdragon" "^0.8.1"
       "to-regex" "^3.0.1"
   
-  "expo-application@~4.1.0":
+  "expo-application@^4.1.0", "expo-application@~4.1.0":
+    "integrity" "sha512-Z2kctgVMpYZB1Iwaxd+XcMBq7h8EEY50GGrwxXsb1OHHQKN+WEVGBWxjvtPkAroqCdujLaB5HBay46gvUHRDQg=="
+    "resolved" "https://registry.npmjs.org/expo-application/-/expo-application-4.1.0.tgz"
     "version" "4.1.0"
   
   "expo-asset@~8.5.0":
@@ -3255,11 +3272,28 @@ Lockfile:
       "path-browserify" "^1.0.0"
       "url-parse" "^1.5.9"
   
-  "expo-constants@~13.1.1":
+  "expo-auth-session@^3.6.1":
+    "integrity" "sha512-6TNtzlp4Ot83hBpJL9qZRmmqGpIUK5eF6GzG9w7NblkaxM0cHOxqtK3gmgfr8ezFl7lMQMkKax+RPbTo/vhzzA=="
+    "resolved" "https://registry.npmjs.org/expo-auth-session/-/expo-auth-session-3.6.1.tgz"
+    "version" "3.6.1"
+    dependencies:
+      "expo-constants" "~13.1.0"
+      "expo-crypto" "~10.2.0"
+      "expo-linking" "~3.1.0"
+      "expo-web-browser" "~10.2.0"
+      "invariant" "^2.2.4"
+      "qs" "6.9.1"
+  
+  "expo-constants@~13.1.0", "expo-constants@~13.1.1":
     "version" "13.1.1"
     dependencies:
       "@expo/config" "^6.0.14"
       "uuid" "^3.3.2"
+  
+  "expo-crypto@~10.2.0":
+    "integrity" "sha512-YVFp+DJXBtt4t6oZXepnzb+xwpKzFbXn3B9Oma1Tfh6J0rIlm/I20UW/5apdvEdbj44fxJ5DsiZeyADI3bcZkQ=="
+    "resolved" "https://registry.npmjs.org/expo-crypto/-/expo-crypto-10.2.0.tgz"
+    "version" "10.2.0"
   
   "expo-eas-client@~0.2.0":
     "integrity" "sha512-XlZr57iHxqo3+AT2TtcRipMuQEyXnTUAv7H5+KVvj6EEJEAHmwc9wZZdKzqf0MbVRUTOawZsl/b2iYanf+kQsQ=="
@@ -3280,6 +3314,14 @@ Lockfile:
     dependencies:
       "fontfaceobserver" "^2.1.0"
   
+  "expo-google-sign-in@^10.2.0":
+    "integrity" "sha512-o7ifg5e9/jX3gWxos6J2kvcg/lmfrQRHdfH5NHeMoj3Ovb186dmasc7szYQ5EqstmKCZL40kh0vVjVVcwCzggQ=="
+    "resolved" "https://registry.npmjs.org/expo-google-sign-in/-/expo-google-sign-in-10.2.0.tgz"
+    "version" "10.2.0"
+    dependencies:
+      "@expo/config-plugins" "^4.0.14"
+      "invariant" "^2.2.4"
+  
   "expo-json-utils@~0.3.0":
     "integrity" "sha512-ceo0pWFJqRAsNjZWX3rVDhy+NDzmrBNFOdvW+HE4EHqlt+OEUu9INIYKO8fU+g3ifI0VcKqHfvvj5wKsSpvPBw=="
     "resolved" "https://registry.npmjs.org/expo-json-utils/-/expo-json-utils-0.3.0.tgz"
@@ -3287,6 +3329,16 @@ Lockfile:
   
   "expo-keep-awake@~10.1.1":
     "version" "10.1.1"
+  
+  "expo-linking@~3.1.0":
+    "integrity" "sha512-fZAUjQJThOtBDAdy/wB0bpqCjnGhiEJ+AkWqOQMCrNsd8kVowdA0xNnD1EBk7nESw6/NCg/Iy1lt5smaA21+rA=="
+    "resolved" "https://registry.npmjs.org/expo-linking/-/expo-linking-3.1.0.tgz"
+    "version" "3.1.0"
+    dependencies:
+      "expo-constants" "~13.1.0"
+      "invariant" "^2.2.4"
+      "qs" "^6.9.1"
+      "url-parse" "^1.5.9"
   
   "expo-manifests@~0.3.0":
     "integrity" "sha512-HegANp+KpZlMX0T2Zb8X7mAVkCThFDq1wjLIjkrSLHhKLczYI2xa/Z5Nk0Tm7qPdGT8NTInCDoOL/nUMtKdNyQ=="
@@ -3319,6 +3371,13 @@ Lockfile:
       "compare-versions" "^3.4.0"
       "invariant" "^2.2.4"
   
+  "expo-random@*", "expo-random@^12.2.0":
+    "integrity" "sha512-SihCGLmDyDOALzBN8XXpz2hCw0RSx9c4/rvjcS4Bfqhw6luHjL2rHNTLrFYrPrPRmG1jHM6dXXJe/Zm8jdu+2g=="
+    "resolved" "https://registry.npmjs.org/expo-random/-/expo-random-12.2.0.tgz"
+    "version" "12.2.0"
+    dependencies:
+      "base64-js" "^1.3.0"
+  
   "expo-status-bar@~1.3.0":
     "version" "1.3.0"
   
@@ -3349,6 +3408,13 @@ Lockfile:
       "fbemitter" "^3.0.0"
       "resolve-from" "^5.0.0"
       "uuid" "^3.4.0"
+  
+  "expo-web-browser@~10.2.0":
+    "integrity" "sha512-om34EL7OX5ouBM/hq2PrjHDLKmjVhAy+1H7YqRY6nS8dWsewnLFdLq4d8GPwWQBYb6kHKYVzwFRj+WLTfpAOBQ=="
+    "resolved" "https://registry.npmjs.org/expo-web-browser/-/expo-web-browser-10.2.1.tgz"
+    "version" "10.2.1"
+    dependencies:
+      "compare-urls" "^2.0.0"
   
   "expo@*", "expo@~45.0.0":
     "version" "45.0.6"
@@ -3969,6 +4035,11 @@ Lockfile:
   
   "is-path-inside@^3.0.2":
     "version" "3.0.3"
+  
+  "is-plain-obj@^1.0.0":
+    "integrity" "sha512-yvkRyxmFKEOQ4pNXCmJG5AEQNlXJS5LaONXo5/cLdTZdWvsZ1ioJEonLGAosKlMWE8lwUy/bJzMjcw8az73+Fg=="
+    "resolved" "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-1.1.0.tgz"
+    "version" "1.1.0"
   
   "is-plain-obj@^2.1.0":
     "integrity" "sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA=="
@@ -4764,6 +4835,15 @@ Lockfile:
   "normalize-path@^3.0.0":
     "version" "3.0.0"
   
+  "normalize-url@^2.0.1":
+    "integrity" "sha512-D6MUW4K/VzoJ4rJ01JFKxDrtY1v9wrgzCX5f2qj/lzH1m/lW6MhUZFKerVsnyjOhOsYzI9Kqqak+10l4LvLpMw=="
+    "resolved" "https://registry.npmjs.org/normalize-url/-/normalize-url-2.0.1.tgz"
+    "version" "2.0.1"
+    dependencies:
+      "prepend-http" "^2.0.0"
+      "query-string" "^5.0.1"
+      "sort-keys" "^2.0.0"
+  
   "npm-package-arg@^7.0.0":
     "version" "7.0.0"
     dependencies:
@@ -4792,6 +4872,11 @@ Lockfile:
       "copy-descriptor" "^0.1.0"
       "define-property" "^0.2.5"
       "kind-of" "^3.0.3"
+  
+  "object-inspect@^1.9.0":
+    "integrity" "sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ=="
+    "resolved" "https://registry.npmjs.org/object-inspect/-/object-inspect-1.12.2.tgz"
+    "version" "1.12.2"
   
   "object-keys@^1.1.1":
     "version" "1.1.1"
@@ -4932,6 +5017,11 @@ Lockfile:
   "p-try@^2.0.0":
     "version" "2.2.0"
   
+  "paho-mqtt@^1.1.0":
+    "integrity" "sha512-KPbL9KAB0ASvhSDbOrZBaccXS+/s7/LIofbPyERww8hM5Ko71GUJQ6Nmg0BWqj8phAIT8zdf/Sd/RftHU9i2HA=="
+    "resolved" "https://registry.npmjs.org/paho-mqtt/-/paho-mqtt-1.1.0.tgz"
+    "version" "1.1.0"
+  
   "parse-json@^4.0.0":
     "version" "4.0.0"
     dependencies:
@@ -5013,6 +5103,11 @@ Lockfile:
   "posix-character-classes@^0.1.0":
     "version" "0.1.1"
   
+  "prepend-http@^2.0.0":
+    "integrity" "sha512-ravE6m9Atw9Z/jjttRUZ+clIXogdghyZAuWJ3qEzjT+jI/dL1ifAqhZeC5VHzQp1MSt1+jxKkFNemj/iO7tVUA=="
+    "resolved" "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
+    "version" "2.0.0"
+  
   "pretty-bytes@5.6.0":
     "version" "5.6.0"
   
@@ -5085,8 +5180,29 @@ Lockfile:
   "qrcode-terminal@0.11.0":
     "version" "0.11.0"
   
+  "qs@^6.9.1":
+    "integrity" "sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q=="
+    "resolved" "https://registry.npmjs.org/qs/-/qs-6.11.0.tgz"
+    "version" "6.11.0"
+    dependencies:
+      "side-channel" "^1.0.4"
+  
   "qs@6.7.0":
     "version" "6.7.0"
+  
+  "qs@6.9.1":
+    "integrity" "sha512-Cxm7/SS/y/Z3MHWSxXb8lIFqgqBowP5JMlTUFyJN88y0SGQhVmZnqFK/PeuMX9LzUyWsqqhNxIyg0jlzq946yA=="
+    "resolved" "https://registry.npmjs.org/qs/-/qs-6.9.1.tgz"
+    "version" "6.9.1"
+  
+  "query-string@^5.0.1":
+    "integrity" "sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw=="
+    "resolved" "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz"
+    "version" "5.1.1"
+    dependencies:
+      "decode-uri-component" "^0.2.0"
+      "object-assign" "^4.1.0"
+      "strict-uri-encode" "^1.0.0"
   
   "query-string@^7.0.0":
     "version" "7.1.1"
@@ -5181,6 +5297,13 @@ Lockfile:
     "version" "0.9.0"
     dependencies:
       "bignumber.js" "^9.0.1"
+  
+  "react-native-paho-mqtt@^0.1.1":
+    "integrity" "sha512-SbiAQA+BsfSoMkFZUUEdwmVpDeYMvP1CfGUBiBYWzqTsINWBjd9kPLGK+xJR7tUSBx7NcmYLliUWkqzwa9gZxw=="
+    "resolved" "https://registry.npmjs.org/react-native-paho-mqtt/-/react-native-paho-mqtt-0.1.1.tgz"
+    "version" "0.1.1"
+    dependencies:
+      "events" "^1.1.1"
   
   "react-native-reanimated@~2.8.0":
     "version" "2.8.0"
@@ -5567,6 +5690,15 @@ Lockfile:
       "array-reduce" "~0.0.0"
       "jsonify" "~0.0.0"
   
+  "side-channel@^1.0.4":
+    "integrity" "sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw=="
+    "resolved" "https://registry.npmjs.org/side-channel/-/side-channel-1.0.4.tgz"
+    "version" "1.0.4"
+    dependencies:
+      "call-bind" "^1.0.0"
+      "get-intrinsic" "^1.0.2"
+      "object-inspect" "^1.9.0"
+  
   "signal-exit@^3.0.0", "signal-exit@^3.0.2":
     "version" "3.0.7"
   
@@ -5621,6 +5753,13 @@ Lockfile:
       "source-map" "^0.5.6"
       "source-map-resolve" "^0.5.0"
       "use" "^3.1.0"
+  
+  "sort-keys@^2.0.0":
+    "integrity" "sha512-/dPCrG1s3ePpWm6yBbxZq5Be1dXGLyLn9Z791chDC3NFrpkVbWGzkBwPN1knaciexFXgRJ7hzdnwZ4stHSDmjg=="
+    "resolved" "https://registry.npmjs.org/sort-keys/-/sort-keys-2.0.0.tgz"
+    "version" "2.0.0"
+    dependencies:
+      "is-plain-obj" "^1.0.0"
   
   "source-map-resolve@^0.5.0":
     "version" "0.5.3"
@@ -5695,6 +5834,11 @@ Lockfile:
   
   "stream-buffers@2.2.x":
     "version" "2.2.0"
+  
+  "strict-uri-encode@^1.0.0":
+    "integrity" "sha512-R3f198pcvnB+5IpnBlRkphuE9n46WyVl8I39W/ZUTZLz4nqSP/oLYUrcnJrw462Ds8he4YKMov2efsTIw1BDGQ=="
+    "resolved" "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz"
+    "version" "1.1.0"
   
   "strict-uri-encode@^2.0.0":
     "version" "2.0.0"
