@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { Directions } from 'react-native-gesture-handler'
 
 const styles = StyleSheet.create({
   container: {
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   },
   buttonLogout: {
     width: 60,
-    height: 60,
+    height: 1200,
     position: "absolute",
     bottom: 30,
     right: 20,
