@@ -22,11 +22,7 @@ export default function NewUser({ navigation }) {
                 const uid = database.user.uid;
                 const users = firebase.firestore().collection('users');
                 users.doc(uid).set({
-                    name: nome, telefone: telefone, porta: porta
-                });
-                database.user.updateProfile({
-                    displayName: nome,
-                    photoURL: porta
+                    name: nome, telefone: telefone, porta: porta, email: email
                 });
                 navigation.navigate("Task", { idUser: users.uid })
             })
