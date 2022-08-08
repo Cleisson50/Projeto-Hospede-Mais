@@ -4,7 +4,7 @@ import { Directions } from 'react-native-gesture-handler'
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#EEE9E9",
     paddingTop: 20
   },
   buttonLigar: {
@@ -44,6 +44,36 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontSize: 25,
     fontWeight:"bold",
+  },
+  icon:{
+    margin: 40,
+    justifyContent: 'center',
+        alignItems: 'center',
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#ffffff'
+  },
+  usuario: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  button:{
+    backgroundColor: '#375E55',
+    borderRadius: 60
+  },
+  button2:{
+    backgroundColor: '#950919',
+    borderRadius: 60
+  },
+  tinyLogo: {
+    width: 200,
+    height: 200,
   }
 });
 

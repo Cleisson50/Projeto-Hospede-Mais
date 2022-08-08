@@ -16,7 +16,7 @@ export default function NewUser({ navigation }) {
     const [errorRegister, setErrorRegister] = useState("");
 
 
-    function register () {
+    function register() {
         firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(database => {
                 const uid = database.user.uid;
@@ -24,8 +24,8 @@ export default function NewUser({ navigation }) {
                 users.doc(uid).set({
                     name: nome, telefone: telefone, porta: porta, email: email
                 });
-                navigation.navigate("Task", { idUser: users.uid })
             })
+        navigation.navigate("Task", { idUser: users.uid })
     }
 
     return (

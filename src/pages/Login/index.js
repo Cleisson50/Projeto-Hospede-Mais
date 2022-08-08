@@ -86,7 +86,7 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             }
             <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGaEbmPq1vaFxOWuVOfhCoLSGspGZvC53pMQ&usqp=CAU' }} style={{ width: 30, height: 30, borderRadius: 50, }} />
+                <Image source={require('../../img/google.png')} style={{ width: 30, height: 30, borderRadius: 6, }} />
                 <View>
                     <Text style={styles.textLogin}>Login com Google</Text>
                 </View>
