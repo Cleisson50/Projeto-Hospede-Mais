@@ -24,10 +24,10 @@ export default function Task({ navigation, route }) {
 
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
-        'broker.emqx.io',
-        8083,
-        // '10.44.1.35',
-        // 9001,
+        // 'broker.emqx.io',
+        // 8083,
+        '10.44.1.35',
+        9001,
         // '/',
         clientID
     )
