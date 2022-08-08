@@ -5,12 +5,23 @@ import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useBackHandler } from '@react-native-community/hooks';
 import styles from "./style";
 import { collection, getDocs } from "firebase/firestore";
-import Paho from "paho-mqtt"
+import Paho from "paho-mqtt";
 
 export default function Task({ navigation, route }) {
     const database = firebase.firestore();
-    const [usuario, setUsuario] = useState("")
-    
+    const [usuario, setUsuario] = useState("");
+
+    const [invert, setInvert] = useState(true);
+
+    useBackHandler(() => {
+        if (invert == true) {
+            setInvert(false);
+            return true;
+        } else {
+            return false;
+        }
+    });
+
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
         'broker.emqx.io',
@@ -59,8 +70,8 @@ export default function Task({ navigation, route }) {
         });
     }
 
-    async function listar(){
-        const docRef = await database.collection("users").doc(route.params.idUser);
+    useEffect(() => {
+        const docRef = database.collection("users").doc(route.params.idUser);
         docRef.get().then(function (doc) {
             if (doc.exists) {
                 console.log("Document data:", doc.data());
@@ -72,17 +83,40 @@ export default function Task({ navigation, route }) {
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
-    }
-
-    useEffect(() => {
-        listar();
     }, []);
 
     return (
         <View style={styles.container}>
-            <Text>Bem-vindo: {usuario.name}</Text>
+            <Text style={styles.usuario}>Bem-vindo: {usuario.name}</Text>
 
-            <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
+            <View style={styles.icon}>
+                {invert ? (
+                    <Image
+                        style={styles.tinyLogo}
+                        source={require('../../img/lock1.png')}
+                    />
+                ) : (
+                    <Image
+                        style={styles.tinyLogo}
+                        source={require('../../img/unlock1.png')}
+                    />
+                )
+                }
+            </View>
+            <View>
+                {invert ? (
+                    <TouchableOpacity onPress={() => { setInvert(false); ligar() }} style={styles.button}>
+                        <Text style={styles.paragraph}>Abrir</Text>
+                    </TouchableOpacity>
+                ) : (
+                    <TouchableOpacity onPress={() => { setInvert(true); desligar() }} style={styles.button2}>
+                        <Text style={styles.paragraph}>Fechar</Text>
+                    </TouchableOpacity>
+                )
+                }
+            </View>
+
+            {/* <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
                 <Text>Abrir</Text>
             </TouchableOpacity>
 
@@ -90,7 +124,7 @@ export default function Task({ navigation, route }) {
                 desligar();
             }}>
                 <Text>Fechar</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>
