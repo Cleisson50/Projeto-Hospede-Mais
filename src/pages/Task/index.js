@@ -10,6 +10,7 @@ import Paho from "paho-mqtt"
 export default function Task({ navigation, route }) {
     const database = firebase.firestore();
     const [usuario, setUsuario] = useState("")
+    
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
         'broker.emqx.io',
@@ -58,9 +59,8 @@ export default function Task({ navigation, route }) {
         });
     }
 
-    useEffect(() => {
-        const docRef = database.collection("users").doc(route.params.idUser);
-
+    async function listar(){
+        const docRef = await database.collection("users").doc(route.params.idUser);
         docRef.get().then(function (doc) {
             if (doc.exists) {
                 console.log("Document data:", doc.data());
@@ -72,6 +72,10 @@ export default function Task({ navigation, route }) {
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
+    }
+
+    useEffect(() => {
+        listar();
     }, []);
 
     return (
@@ -82,7 +86,9 @@ export default function Task({ navigation, route }) {
                 <Text>Abrir</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.buttonDesligar} onPress={desligar}>
+            <TouchableOpacity style={styles.buttonDesligar} onPress={() => {
+                desligar();
+            }}>
                 <Text>Fechar</Text>
             </TouchableOpacity>
 
