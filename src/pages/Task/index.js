@@ -128,8 +128,9 @@ export default function Task({ navigation, route }) {
 
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>
-                    <MaterialCommunityIcons name="location-exit" size={23} color="#f92e6a" />
+                    Sair
                 </Text>
+                <MaterialCommunityIcons name="location-exit" size={23} color="#000000" />
             </TouchableOpacity>
         </View>
     )

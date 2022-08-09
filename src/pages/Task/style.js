@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   iconButtonLogout: {
-    color: "#ffffff",
-    fontSize: 25,
+    color: "#000000",
+    fontSize: 20,
     fontWeight:"bold",
+    right: 45,
+    position: "absolute",
   },
   icon:{
     margin: 40,
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button:{
-    backgroundColor: '#375E55',
+    backgroundColor: '#1E90FF',
     borderRadius: 60
   },
   button2:{
