@@ -13,10 +13,10 @@ export default function Task({ navigation, route }) {
 
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
-        'broker.emqx.io',
-        8083,
-        // '10.44.1.35',
-        // 9001,
+        // 'broker.emqx.io',
+        // 8083,
+        '10.44.1.35',
+        9001,
         // '/',
         clientID
     )
@@ -24,7 +24,6 @@ export default function Task({ navigation, route }) {
     client.connect({
         onSuccess: function () {
             console.log("connected")
-            console.log(clientID)
             // client.subscribe("esp32/output")
             // client.subscribe("esp32/distance")
             client.subscribe(usuario.porta); // As linhas a seguir sao uma tentativa de envio de mensagem
@@ -74,7 +73,6 @@ export default function Task({ navigation, route }) {
         const docRef = await database.collection("users").doc(route.params.idUser);
         docRef.get().then(function (doc) {
             if (doc.exists) {
-                console.log("Document data:", doc.data());
                 setUsuario(doc.data())
             } else {
                 // doc.data() will be undefined in this case
@@ -119,16 +117,6 @@ export default function Task({ navigation, route }) {
                 )
                 }
             </View>
-
-            {/* <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
-                <Text>Abrir</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.buttonDesligar} onPress={() => {
-                desligar();
-            }}>
-                <Text>Fechar</Text>
-            </TouchableOpacity> */}
 
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>

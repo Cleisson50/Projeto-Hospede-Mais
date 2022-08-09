@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import firebase from "../../config/firebaseConfig";
 import styles from "./styles";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 import NewUser from "../NewUser";
 import RedefinirSenha from "../Redefinir";
 
@@ -10,6 +10,9 @@ export default function Login({ navigation }) {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
+
+    const [input, setInput] = useState('');
+    const [hidePass, setHidePass] = useState(true);
 
     const loginFirebase = () => {
         firebase.auth().signInWithEmailAndPassword(email, senha)
@@ -61,7 +64,16 @@ export default function Login({ navigation }) {
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
+            <View style={styles.inputprincipal}>
+            <TextInput style={styles.inputArea} secureTextEntry={true}  placeholder="Insira uma senha"    type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} />
+          
+          <TouchableOpacity style={styles.icon} onPress={ () => setHidePass(!hidePass)}>
+          <Ionicons name="eye" color='#000000' size={25} />
+         </TouchableOpacity>
+            </View>
+            
+          
+          
             {errorLogin === true
                 ?
                 <View style={styles.contentAlert}>
