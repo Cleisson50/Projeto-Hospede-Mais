@@ -11,23 +11,12 @@ export default function Task({ navigation, route }) {
     const database = firebase.firestore();
     const [usuario, setUsuario] = useState("");
 
-    const [invert, setInvert] = useState(true);
-
-    useBackHandler(() => {
-        if (invert == true) {
-            setInvert(false);
-            return true;
-        } else {
-            return false;
-        }
-    });
-
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
-        // 'broker.emqx.io',
-        // 8083,
-        '10.44.1.35',
-        9001,
+        'broker.emqx.io',
+        8083,
+        // '10.44.1.35',
+        // 9001,
         // '/',
         clientID
     )
@@ -47,6 +36,17 @@ export default function Task({ navigation, route }) {
         // password: 'public',
         // useSSL: true,
     })
+
+    const [invert, setInvert] = useState(true);
+
+    useBackHandler(() => {
+        if (invert == true) {
+            setInvert(false);
+            return true;
+        } else {
+            return false;
+        }
+    });
 
     function ligar() {
         const message1 = new Paho.Message("on"); // AGORA funcionando
@@ -70,8 +70,8 @@ export default function Task({ navigation, route }) {
         });
     }
 
-    useEffect(() => {
-        const docRef = database.collection("users").doc(route.params.idUser);
+    async function registro() {
+        const docRef = await database.collection("users").doc(route.params.idUser);
         docRef.get().then(function (doc) {
             if (doc.exists) {
                 console.log("Document data:", doc.data());
@@ -83,6 +83,10 @@ export default function Task({ navigation, route }) {
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
+    }
+
+    useEffect(() => {
+        registro()
     }, []);
 
     return (
