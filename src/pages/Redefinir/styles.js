@@ -47,6 +47,16 @@ const styles = StyleSheet.create({
         color: "#bdbdbd",
         fontSize: 16,
     },
+    login: {
+        marginTop: 20,
+        color: "#000000",
+        fontSize: 16,
+    },
+    linkLogin: {
+        color: "#0000CD",
+        fontSize: 16,
+        marginLeft: 15
+    }
 });
 
 export default styles

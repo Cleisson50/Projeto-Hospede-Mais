@@ -28,6 +28,12 @@ export default function RedefinirSenha({ navigation }) {
             <TouchableOpacity style={styles.buttonRegister} onPress={() => { Redefinir() }}>
                 <Text style={styles.textButtonRegister}>Enviar</Text>
             </TouchableOpacity>
+            <Text style={styles.login}>
+                Já está registrado?
+                <Text style={styles.linkLogin} onPress={() => navigation.navigate("Login")}>
+                    Login
+                </Text>
+            </Text>
         </KeyboardAvoidingView>
     )
 }

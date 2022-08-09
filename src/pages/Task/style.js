@@ -36,21 +36,22 @@ const styles = StyleSheet.create({
     height: 30,
     position: "absolute",
     bottom: 30,
-    right: 20,
+    right: 10,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: 8,
   },
   iconButtonLogout: {
     color: "#000000",
     fontSize: 20,
-    fontWeight:"bold",
-    right: 45,
+    fontWeight: "bold",
     position: "absolute",
+    right: 40,
   },
-  icon:{
+  icon: {
     margin: 40,
     justifyContent: 'center',
-        alignItems: 'center',
+    alignItems: 'center',
   },
   paragraph: {
     margin: 24,
@@ -65,13 +66,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  button:{
-    backgroundColor: '#1E90FF',
-    borderRadius: 60
+  button: {
+    backgroundColor: '#375E55',
+    borderRadius: 60,
+    width: 300,
+    marginLeft: 40,
+    marginTop: 30,
   },
-  button2:{
+  button2: {
     backgroundColor: '#950919',
-    borderRadius: 60
+    borderRadius: 60,
+    width: 300,
+    marginLeft: 40,
+    marginTop: 30,
   },
   tinyLogo: {
     width: 200,
