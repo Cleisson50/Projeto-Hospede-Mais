@@ -11,17 +11,6 @@ export default function Task({ navigation, route }) {
     const database = firebase.firestore();
     const [usuario, setUsuario] = useState("");
 
-    const [invert, setInvert] = useState(true);
-
-    useBackHandler(() => {
-        if (invert == true) {
-            setInvert(false);
-            return true;
-        } else {
-            return false;
-        }
-    });
-
     var clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
         // 'broker.emqx.io',
@@ -35,7 +24,6 @@ export default function Task({ navigation, route }) {
     client.connect({
         onSuccess: function () {
             console.log("connected")
-            console.log(clientID)
             // client.subscribe("esp32/output")
             // client.subscribe("esp32/distance")
             client.subscribe(usuario.porta); // As linhas a seguir sao uma tentativa de envio de mensagem
@@ -47,6 +35,17 @@ export default function Task({ navigation, route }) {
         // password: 'public',
         // useSSL: true,
     })
+
+    const [invert, setInvert] = useState(true);
+
+    useBackHandler(() => {
+        if (invert == true) {
+            setInvert(false);
+            return true;
+        } else {
+            return false;
+        }
+    });
 
     function ligar() {
         const message1 = new Paho.Message("on"); // AGORA funcionando
@@ -70,11 +69,10 @@ export default function Task({ navigation, route }) {
         });
     }
 
-    useEffect(() => {
-        const docRef = database.collection("users").doc(route.params.idUser);
+    async function registro() {
+        const docRef = await database.collection("users").doc(route.params.idUser);
         docRef.get().then(function (doc) {
             if (doc.exists) {
-                console.log("Document data:", doc.data());
                 setUsuario(doc.data())
             } else {
                 // doc.data() will be undefined in this case
@@ -83,6 +81,10 @@ export default function Task({ navigation, route }) {
         }).catch(function (error) {
             console.log("Error getting document:", error);
         });
+    }
+
+    useEffect(() => {
+        registro()
     }, []);
 
     return (
@@ -115,16 +117,6 @@ export default function Task({ navigation, route }) {
                 )
                 }
             </View>
-
-            {/* <TouchableOpacity style={styles.buttonLigar} onPress={ligar}>
-                <Text>Abrir</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.buttonDesligar} onPress={() => {
-                desligar();
-            }}>
-                <Text>Fechar</Text>
-            </TouchableOpacity> */}
 
             <TouchableOpacity style={styles.buttonLogout} onPress={() => { logout() }}>
                 <Text style={styles.iconButtonLogout}>

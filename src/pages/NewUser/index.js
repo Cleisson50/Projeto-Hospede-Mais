@@ -15,17 +15,16 @@ export default function NewUser({ navigation }) {
     const [porta, setPorta] = useState("");
     const [errorRegister, setErrorRegister] = useState("");
 
-
-    function register() {
-        firebase.auth().createUserWithEmailAndPassword(email, senha)
+    async function register() {
+        await firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(database => {
                 const uid = database.user.uid;
                 const users = firebase.firestore().collection('users');
                 users.doc(uid).set({
                     name: nome, telefone: telefone, porta: porta, email: email
                 });
-            })
-        navigation.navigate("Task", { idUser: users.uid })
+            });
+            navigation.navigate("Task")
     }
 
     return (
