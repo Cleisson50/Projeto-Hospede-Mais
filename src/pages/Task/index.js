@@ -20,21 +20,24 @@ export default function Task({ navigation, route }) {
         // '/',
         clientID
     )
-
-    client.connect({
-        onSuccess: function () {
-            console.log("connected")
-            // client.subscribe("esp32/output")
-            // client.subscribe("esp32/distance")
-            client.subscribe(usuario.porta); // As linhas a seguir sao uma tentativa de envio de mensagem
-        },
-        onFailure: function () {
-            console.log("Desconectado")
-        },
-        // userName: 'emqx',
-        // password: 'public',
-        // useSSL: true,
-    })
+    try {
+        client.connect({
+            onSuccess: function () {
+                console.log("connected")
+                // client.subscribe("esp32/output")
+                // client.subscribe("esp32/distance")
+                client.subscribe(usuario.porta); // As linhas a seguir sao uma tentativa de envio de mensagem
+            },
+            onFailure: function () {
+                console.log("Desconectado")
+            },
+            // userName: 'emqx',
+            // password: 'public',
+            // useSSL: true,
+        })
+    } catch (error) {
+        alert(error);
+    }
 
     const [invert, setInvert] = useState(true);
 

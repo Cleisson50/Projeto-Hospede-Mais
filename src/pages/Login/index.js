@@ -27,6 +27,7 @@ export default function Login({ navigation }) {
                 let errorMessage = error.message;
             });
     }
+
     const loginGoogle = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
@@ -65,7 +66,7 @@ export default function Login({ navigation }) {
             <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <View style={styles.inputprincipal}>
-            <TextInput style={styles.inputArea} secureTextEntry={true}  placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} />
+            <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} />
           
           <TouchableOpacity style={styles.icon} onPress={ () => setHidePass(!hidePass)}>
           <Ionicons name="eye" color='#000000' size={25} />
