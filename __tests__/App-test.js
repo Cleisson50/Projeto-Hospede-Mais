@@ -1,13 +1,15 @@
-import renderer from 'react-test-renderer';
+//import renderer from 'react-test-renderer';
 import App from '../App';
 import { fireEvent, render } from '@testing-library/react-native';
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
-test('teste de snapshot', () => {
-    // const tela = renderer.create(<App />).toJSON();
-    // expect(tela).toMatchSnapshot();
-});
+describe("Teste de Navegação",  () => {
+    it("Navegação de Login para Task", async () => {
+        const { getByText, getByTestId } = await render(<App />);
 
-test('teste de navegação', () => {
+        //const botao = getByTestId("Login")
+        //fireEvent.press(botao)
 
-});
+        //expect(getByText('Bem-vindo')).toBeTruthy()
+    })
+})

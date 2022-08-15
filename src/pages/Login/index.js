@@ -64,17 +64,17 @@ export default function Login({ navigation }) {
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Login</Text>
-            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
+            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="email" />
             <View style={styles.inputprincipal}>
-            <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} />
-          
-          <TouchableOpacity style={styles.icon} onPress={ () => setHidePass(!hidePass)}>
-          <Ionicons name="eye" color='#000000' size={25} />
-         </TouchableOpacity>
+                <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} testID="senha" />
+
+                <TouchableOpacity style={styles.icon} onPress={() => setHidePass(!hidePass)}>
+                    <Ionicons name="eye" color='#000000' size={25} />
+                </TouchableOpacity>
             </View>
-            
-          
-          
+
+
+
             {errorLogin === true
                 ?
                 <View style={styles.contentAlert}>
@@ -94,25 +94,25 @@ export default function Login({ navigation }) {
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
                 :
-                <TouchableOpacity style={styles.buttonLogin} onPress={loginFirebase}>
+                <TouchableOpacity style={styles.buttonLogin} onPress={loginFirebase} testID="Login">
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
             }
             <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Image source={require('../../img/google.png')} style={{ width: 30, height: 30, borderRadius: 6, }} />
+                <Image source={require('../../img/google.png')} style={{ width: 30, height: 30, borderRadius: 6, }} testID="Logogoogle" />
                 <View>
                     <Text style={styles.textLogin}>Login com Google</Text>
                 </View>
             </TouchableOpacity>
             <Text style={styles.registration}>
                 Não está registrado?
-                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")}>
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("NewUser")} testID="novousuario">
                     Inscreva-se agora
                 </Text>
             </Text>
             <Text style={styles.registration}>
                 Esqueceu sua senha?
-                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("RedefinirSenha")}>
+                <Text style={styles.linkSubscribe} onPress={() => navigation.navigate("RedefinirSenha")} testID="novasenha">
                     Redefinir
                 </Text>
             </Text>

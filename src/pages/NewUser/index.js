@@ -30,11 +30,11 @@ export default function NewUser({ navigation }) {
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Criar uma nova conta</Text>
-            <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} />
-            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={(text) => setPorta(text)} value={porta} />
-            <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
-            <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
+            <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} testID="camponome"/>
+            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="campoemail"/>
+            <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={(text) => setPorta(text)} value={porta} testID="campoporta"/>
+            <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} testID="camponumero"/>
+            <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} testID="camposenha"/>
 
             {errorRegister === true
                 ?
@@ -55,7 +55,7 @@ export default function NewUser({ navigation }) {
                     <Text style={styles.textButtonRegister}>Registrar</Text>
                 </TouchableOpacity>
                 :
-                <TouchableOpacity style={styles.buttonRegister} onPress={register}>
+                <TouchableOpacity style={styles.buttonRegister} onPress={register} testID="registrar">
                     <Text style={styles.textButtonRegister}>Registrar</Text>
                 </TouchableOpacity>
             }

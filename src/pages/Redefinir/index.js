@@ -25,7 +25,7 @@ export default function RedefinirSenha({ navigation }) {
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
             <Text style={styles.title}>Redefinir sua senha</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
-            <TouchableOpacity style={styles.buttonRegister} onPress={() => { Redefinir() }}>
+            <TouchableOpacity style={styles.buttonRegister} onPress={() => { Redefinir() }} testID="redefinir">
                 <Text style={styles.textButtonRegister}>Enviar</Text>
             </TouchableOpacity>
             <Text style={styles.login}>
