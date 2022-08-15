@@ -3,7 +3,7 @@ import { View, Text, KeyboardAvoidingView, TextInput, TouchableOpacity } from "r
 import styles from "./styles";
 import { collection, getDocs } from "firebase/firestore";
 import firebase from "../../config/firebaseConfig";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 import { MaskedTextInput } from "react-native-mask-text";
 
 export default function NewUser({ navigation }) {
@@ -14,6 +14,9 @@ export default function NewUser({ navigation }) {
     const [telefone, setTelefone] = useState("");
     const [porta, setPorta] = useState("");
     const [errorRegister, setErrorRegister] = useState("");
+
+    const [input, setInput] = useState('');
+    const [hidePass, setHidePass] = useState(true);
 
     async function register() {
         await firebase.auth().createUserWithEmailAndPassword(email, senha)
@@ -34,7 +37,14 @@ export default function NewUser({ navigation }) {
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} />
             <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={(text) => setPorta(text)} value={porta} />
             <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} />
-            <TextInput style={styles.input} secureTextEntry={true} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} value={senha} />
+            <View style={styles.inputprincipal}>
+            <TextInput style={styles.inputArea}  placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} />
+
+
+            <TouchableOpacity style={styles.icon} onPress={ () => setHidePass(!hidePass)}>
+          <Ionicons name="eye" color='#000000' size={25} />
+         </TouchableOpacity>
+            </View>
 
             {errorRegister === true
                 ?

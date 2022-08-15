@@ -56,6 +56,30 @@ const styles = StyleSheet.create({
     color: "#0000CD",
     fontSize: 16,
     marginLeft: 15
+  },
+  icon: {
+    marginLeft: 10,
+  },
+  inputprincipal: {
+    flexDirection: 'row',
+    width: 300,
+    marginTop: 10,
+    padding: 10,
+    height: 50,
+    borderBottomWidth: 1,
+    borderBottomColor: "#000000",
+    marginLeft: "auto",
+    marginRight: "auto",
+    color: "#4d5156",
+    alignItems: 'center'
+  },
+  inputArea: {
+    width: 265,
+    height: 50,
+    padding: 10,
+    marginLeft: "auto",
+    marginRight: "auto",
+    color: "#4d5156",
   }
 });
 
