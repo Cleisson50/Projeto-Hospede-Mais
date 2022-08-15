@@ -73,8 +73,6 @@ export default function Login({ navigation }) {
                 </TouchableOpacity>
             </View>
 
-
-
             {errorLogin === true
                 ?
                 <View style={styles.contentAlert}>
