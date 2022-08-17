@@ -28,7 +28,7 @@ export default function Login({ navigation }) {
             });
     }
 
-    const loginGoogle = () => {
+    function loginGoogle() {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
             .signInWithPopup(provider)
@@ -53,13 +53,13 @@ export default function Login({ navigation }) {
             });
     }
 
-    useEffect(() => {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                navigation.navigate("Task", { idUser: user.uid })
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     firebase.auth().onAuthStateChanged((user) => {
+    //         if (user) {
+    //             navigation.navigate("Task", { idUser: user.uid })
+    //         }
+    //     });
+    // }, []);
 
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}>
