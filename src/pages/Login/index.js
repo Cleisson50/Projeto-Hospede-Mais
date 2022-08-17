@@ -62,7 +62,7 @@ export default function Login({ navigation }) {
     // }, []);
 
     return (
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="email" />
             <View style={styles.inputprincipal}>
@@ -114,6 +114,6 @@ export default function Login({ navigation }) {
                     Redefinir
                 </Text>
             </Text>
-        </KeyboardAvoidingView>
+        </View>
     );
 }

@@ -31,7 +31,7 @@ export default function NewUser({ navigation }) {
     }
 
     return (
-        <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.container}>
             <Text style={styles.title}>Criar uma nova conta</Text>
             <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} testID="camponome" />
             <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="campoemail" />
@@ -75,6 +75,6 @@ export default function NewUser({ navigation }) {
                     Login
                 </Text>
             </Text>
-        </KeyboardAvoidingView>
+        </View>
     )
 }
