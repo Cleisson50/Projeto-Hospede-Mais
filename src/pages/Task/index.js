@@ -91,7 +91,7 @@ export default function Task({ navigation, route }) {
     }, []);
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container} TestId="welcome">
             <Text style={styles.usuario}>Bem-vindo: {usuario.name}</Text>
 
             <View style={styles.icon}>
@@ -110,11 +110,11 @@ export default function Task({ navigation, route }) {
             </View>
             <View>
                 {invert ? (
-                    <TouchableOpacity onPress={() => { setInvert(false); ligar() }} style={styles.button}>
+                    <TouchableOpacity onPress={() => { setInvert(false); ligar() }} style={styles.button} TestId="abrir">
                         <Text style={styles.paragraph}>Abrir</Text>
                     </TouchableOpacity>
                 ) : (
-                    <TouchableOpacity onPress={() => { setInvert(true); desligar() }} style={styles.button2}>
+                    <TouchableOpacity onPress={() => { setInvert(true); desligar() }} style={styles.button2} TestId="fechar">
                         <Text style={styles.paragraph}>Fechar</Text>
                     </TouchableOpacity>
                 )
