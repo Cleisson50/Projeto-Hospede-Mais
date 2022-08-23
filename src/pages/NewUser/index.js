@@ -61,11 +61,11 @@ export default function NewUser({ navigation }) {
             }
             {email === "" || senha === ""
                 ?
-                <TouchableOpacity disabled={true} style={styles.buttonRegister}>
+                <TouchableOpacity disabled={true} style={styles.buttonRegister} testID="registrarDesativado">
                     <Text style={styles.textButtonRegister}>Registrar</Text>
                 </TouchableOpacity>
                 :
-                <TouchableOpacity style={styles.buttonRegister} onPress={register} testID="registrar">
+                <TouchableOpacity style={styles.buttonRegister} onPress={register} testID="registrarAtivado">
                     <Text style={styles.textButtonRegister}>Registrar</Text>
                 </TouchableOpacity>
             }

@@ -1337,7 +1337,11 @@
     "json5" "^1.0.1"
     "write-file-atomic" "^2.3.0"
 
+<<<<<<< HEAD
 "@expo/metro-config@~0.3.7", "@expo/metro-config@0.3.19":
+=======
+"@expo/metro-config@0.3.19":
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
   "integrity" "sha512-UZlwnD0g/7uAx/AZ5ulC7Y4unfJFJywXy3Ozu40dhQnSciOU/nkzK94XpKbxHuRZJ3crZxvL2EDwQ8jguDjASw=="
   "resolved" "https://registry.npmjs.org/@expo/metro-config/-/metro-config-0.3.19.tgz"
   "version" "0.3.19"
@@ -2083,10 +2087,17 @@
   "resolved" "https://registry.npmjs.org/@react-icons/all-files/-/all-files-4.1.0.tgz"
   "version" "4.1.0"
 
+<<<<<<< HEAD
 "@react-native-async-storage/async-storage@^1.17.7":
   "integrity" "sha512-mDtWhCcpxzrZhA95f6zi0pnBsjBEZW1LKZWfxVXG0UfaWpPxDBCKowNk2xjRTytckZeVhjmPJPtBU+8QNQcR0A=="
   "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.17.7.tgz"
   "version" "1.17.7"
+=======
+"@react-native-async-storage/async-storage@^1.17.9":
+  "integrity" "sha512-HKhMvjpA5/YzNMkcY3qeWLdTtUrtJe243knHNNYe1c0IplX69hZyiw7DjFwAgxPG9+YvzHDHliqPV+mBNOv+cQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.17.9.tgz"
+  "version" "1.17.9"
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
   dependencies:
     "merge-options" "^3.0.4"
 
@@ -4207,15 +4218,26 @@
   "resolved" "https://registry.npmjs.org/expo-updates-interface/-/expo-updates-interface-0.6.0.tgz"
   "version" "0.6.0"
 
+<<<<<<< HEAD
 "expo-updates@~0.13.3":
   "integrity" "sha512-aVO3Ha+vRGnkJbqlJMNoQn/p31DMnhZSGUs977ixhb0ff2xs530vf4/zVi4s635lkwuCd23++oga44Z4quKV/w=="
   "resolved" "https://registry.npmjs.org/expo-updates/-/expo-updates-0.13.3.tgz"
   "version" "0.13.3"
+=======
+"expo-updates@^0.13.4":
+  "integrity" "sha512-GrA88YT2WN0rY4+uDHm7Yb3Gt7hAtVkaGq3ANIDbtIDVarvnHJ4d7cSp0U+FAyhtJCOPRo0QjF/Gy8rpP/G4yw=="
+  "resolved" "https://registry.npmjs.org/expo-updates/-/expo-updates-0.13.4.tgz"
+  "version" "0.13.4"
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
   dependencies:
     "@expo/code-signing-certificates" "0.0.1"
-    "@expo/config" "^6.0.14"
+    "@expo/config" "~6.0.23"
     "@expo/config-plugins" "^4.0.14"
+<<<<<<< HEAD
     "@expo/metro-config" "~0.3.7"
+=======
+    "@expo/metro-config" "0.3.19"
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
     "arg" "4.1.0"
     "expo-eas-client" "~0.2.0"
     "expo-manifests" "~0.3.0"
@@ -7411,6 +7433,7 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
+<<<<<<< HEAD
 "react-devtools-core@^4.23.0":
   "version" "4.24.7"
   dependencies:
@@ -7448,10 +7471,59 @@
   "version" "16.13.1"
 
 "react-is@^16.13.1":
+=======
+"react_native_mqtt@^1.3.1":
+  "integrity" "sha512-G7xlNwNvvbm+kGRuJUDeK2ij7SlHt2K06bJ56WyxOyMKiHccmm+cCT/PhoJaY6OtYXC3Mq17oGQVHSpu6mQeMQ=="
+  "resolved" "https://registry.npmjs.org/react_native_mqtt/-/react_native_mqtt-1.3.1.tgz"
+  "version" "1.3.1"
+  dependencies:
+    "react-native-storage" "^0.1.2"
+
+"react-devtools-core@^4.23.0":
+  "version" "4.24.7"
+  dependencies:
+    "shell-quote" "^1.6.1"
+    "ws" "^7"
+
+"react-dom@>=17.0.1", "react-dom@17.0.2":
+  "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
+  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
+  "version" "17.0.2"
+  dependencies:
+    "loose-envify" "^1.1.0"
+    "object-assign" "^4.1.1"
+    "scheduler" "^0.20.2"
+
+"react-freeze@^1.0.0":
+  "version" "1.0.0"
+
+"react-hook-form@^7.33.1":
+  "version" "7.33.1"
+
+"react-icons@^4.4.0":
+  "integrity" "sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.4.0.tgz"
+  "version" "4.4.0"
+
+"react-is@^16.12.0 || ^17.0.0", "react-is@^17.0.1", "react-is@^17.0.2":
+  "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
+  "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
+  "version" "17.0.2"
+
+"react-is@^16.13.0":
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+<<<<<<< HEAD
+=======
+"react-is@^16.13.1":
+  "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
+  "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
+  "version" "16.13.1"
+
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
 "react-is@^16.7.0":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -7528,6 +7600,14 @@
     "react-freeze" "^1.0.0"
     "warn-once" "^0.1.0"
 
+<<<<<<< HEAD
+=======
+"react-native-storage@^0.1.2":
+  "integrity" "sha512-k8Kbbss8IgbUUWlht8sEIPiowMsv8mY+QbBG23Pjk38+g8NwxyYxMJtIyYj9SpP2xaMZLQ67JFAEbTHsstZ8gg=="
+  "resolved" "https://registry.npmjs.org/react-native-storage/-/react-native-storage-0.1.5.tgz"
+  "version" "0.1.5"
+
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
 "react-native-web@0.17.7":
   "integrity" "sha512-4OOU/QjyRySOXyHfTvljEMS4VXKn42Qs3y9uHDPMwaCUFjwg0oasR/j706OaVgan9kF4Ipa2vJ3F6Z/Xqy8KeQ=="
   "resolved" "https://registry.npmjs.org/react-native-web/-/react-native-web-0.17.7.tgz"
@@ -9322,11 +9402,14 @@
     "y18n" "^5.0.5"
     "yargs-parser" "^20.2.2"
 
+<<<<<<< HEAD
 "yet@^0.1.0":
   "integrity" "sha512-oE0OnsHWy/EDLXhDbhr/Gh9dk6p9W0+pPl9c51BXFr1zaIDwkyCbdP+eBS0A41nISaXh7W6UdyZyxf6kVg1KIw=="
   "resolved" "https://registry.npmjs.org/yet/-/yet-0.1.0.tgz"
   "version" "0.1.0"
 
+=======
+>>>>>>> bd2022a25032dc9b8173bfbf2b0e31b52b4208b0
 "yocto-queue@^0.1.0":
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
