@@ -481,6 +481,7 @@ exports[`Teste de Snapshot Snapshot de App 1`] = `
                               "width": 300,
                             }
                           }
+                          testID="Logogoogle"
                         >
                           <Image
                             source={1}
@@ -491,7 +492,6 @@ exports[`Teste de Snapshot Snapshot de App 1`] = `
                                 "width": 30,
                               }
                             }
-                            testID="Logogoogle"
                           />
                           <View>
                             <Text

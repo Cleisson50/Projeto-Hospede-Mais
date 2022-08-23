@@ -11,33 +11,25 @@ export default function Task({ navigation, route }) {
     const database = firebase.firestore();
     const [usuario, setUsuario] = useState("");
 
-    var clientID = "ID-" + Math.round(Math.random() * 1000);
+    const clientID = "ID-" + Math.round(Math.random() * 1000);
     const client = new Paho.Client(
-        // 'broker.emqx.io',
-        // 8083,
-        '10.44.1.35',
-        9001,
+        'broker.emqx.io',
+        8083,
+        // '10.44.1.35',
+        // 9001,
         // '/',
         clientID
     )
-    try {
-        client.connect({
-            onSuccess: function () {
-                console.log("connected")
-                // client.subscribe("esp32/output")
-                // client.subscribe("esp32/distance")
-                client.subscribe(usuario.porta); // As linhas a seguir sao uma tentativa de envio de mensagem
-            },
-            onFailure: function () {
-                console.log("Desconectado")
-            },
-            // userName: 'emqx',
-            // password: 'public',
-            // useSSL: true,
-        })
-    } catch (error) {
-        alert(error);
-    }
+
+    client.connect({
+        onSuccess: function () {
+            console.log("Conectado")
+            client.subscribe(usuario.porta);
+        },
+        onFailure: function () {
+            console.log("Desconectado")
+        },
+    })
 
     const [invert, setInvert] = useState(true);
 
@@ -51,24 +43,36 @@ export default function Task({ navigation, route }) {
     });
 
     function ligar() {
-        const message1 = new Paho.Message("on"); // AGORA funcionando
-        message1.destinationName = usuario.porta; // para testar
-
-        client.send(message1); // abrir o broker online
+        try{
+            const message1 = new Paho.Message("on");
+            message1.destinationName = usuario.porta;
+    
+            client.send(message1);
+        }catch(error){
+            alert("Problema na conexão, consulte a recepção");
+            setInvert(true);
+        }
+        
     }
 
     function desligar() {
-        const message1 = new Paho.Message("off"); // AGORA funcionando
-        message1.destinationName = usuario.porta; // para testar
-
-        client.send(message1); // abrir o broker online
+        try{
+            const message1 = new Paho.Message("off");
+            message1.destinationName = usuario.porta;
+    
+            client.send(message1);
+        }catch(error){
+            alert("Problema na conexão, consulte a recepção");
+            setInvert(true);
+        }
+        
     }
 
     function logout() {
         firebase.auth().signOut().then(() => {
             navigation.navigate("Login")
         }).catch((error) => {
-            // An error happened.
+
         });
     }
 
@@ -78,7 +82,6 @@ export default function Task({ navigation, route }) {
             if (doc.exists) {
                 setUsuario(doc.data())
             } else {
-                // doc.data() will be undefined in this case
                 console.log("No such document!");
             }
         }).catch(function (error) {

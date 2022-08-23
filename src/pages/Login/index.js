@@ -96,8 +96,8 @@ export default function Login({ navigation }) {
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
             }
-            <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle}>
-                <Image source={require('../../img/google.png')} style={{ width: 30, height: 30, borderRadius: 6, }} testID="Logogoogle" />
+            <TouchableOpacity style={styles.buttonLogin} onPress={loginGoogle} testID="Logogoogle">
+                <Image source={require('../../img/google.png')} style={{ width: 30, height: 30, borderRadius: 6, }} />
                 <View>
                     <Text style={styles.textLogin}>Login com Google</Text>
                 </View>
