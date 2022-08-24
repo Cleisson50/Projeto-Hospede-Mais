@@ -33,12 +33,12 @@ export default function NewUser({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Criar uma nova conta</Text>
-            <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={(text) => setNome(text)} value={nome} testID="camponome" />
-            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="campoemail" />
-            <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={(text) => setPorta(text)} value={porta} testID="campoporta" />
-            <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={(text) => setTelefone(text)} value={telefone} testID="camponumero" />
+            <TextInput style={styles.input} placeholder="Insira seu nome" type="text" onChangeText={setNome} value={nome} testID="camponome" />
+            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={setEmail} value={email} testID="campoemail" />
+            <TextInput style={styles.input} placeholder="Insira a porta" type="text" onChangeText={setPorta} value={porta} testID="campoporta" />
+            <MaskedTextInput style={styles.input} keyboardType="phone-pad" mask="(99) 99999-9999" placeholder="Insira seu número de telefone" type="text" onChangeText={setTelefone} value={telefone} testID="camponumero" />
             <View style={styles.inputprincipal}>
-                <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} testID="camposenha" />
+                <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={setSenha} secureTextEntry={hidePass} value={senha} testID="camposenha" />
 
 
                 <TouchableOpacity style={styles.icon} onPress={() => setHidePass(!hidePass)}>

@@ -64,9 +64,9 @@ export default function Login({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
-            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={(text) => setEmail(text)} value={email} testID="email" />
+            <TextInput style={styles.input} placeholder="Insira seu email" type="text" onChangeText={setEmail} value={email} testID="email" />
             <View style={styles.inputprincipal}>
-                <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={(text) => setSenha(text)} secureTextEntry={hidePass} value={senha} testID="senha" />
+                <TextInput style={styles.inputArea} placeholder="Insira uma senha" type="text" onChangeText={setSenha} secureTextEntry={hidePass} value={senha} testID="senha" />
 
                 <TouchableOpacity style={styles.icon} onPress={() => setHidePass(!hidePass)}>
                     <Ionicons name="eye" color='#000000' size={25} />
@@ -88,7 +88,7 @@ export default function Login({ navigation }) {
             }
             {email === "" || senha === ""
                 ?
-                <TouchableOpacity disabled={true} style={styles.buttonLogin}>
+                <TouchableOpacity disabled={true} style={styles.buttonLogin} >
                     <Text style={styles.textButtonLogin}>Login</Text>
                 </TouchableOpacity>
                 :

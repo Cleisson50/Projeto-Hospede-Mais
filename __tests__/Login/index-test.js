@@ -15,10 +15,8 @@ describe('Testes de Inicialização e Exibição', () => {
 describe('Testes do componente Input', () => {
     it('Teste de input email tela Login', () => {
         const { getByTestId } = render(<App />);
-        fireEvent.press(getByTestId("email"));
-    })
-    it('Teste de input Senha tela Login', () => {
-        const { getByTestId } = render(<App />);
-        fireEvent.press(getByTestId("senha"));
+        fireEvent.changeText(getByTestId("email"), "cleissondemathus@gmail.com");
+        fireEvent.changeText(getByTestId("senha"), "99323592");
+        expect(getByTestId("Login")).toBeTruthy();
     })
 })

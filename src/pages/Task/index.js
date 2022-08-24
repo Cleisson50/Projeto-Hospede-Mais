@@ -17,7 +17,6 @@ export default function Task({ navigation, route }) {
         8083,
         // '10.44.1.35',
         // 9001,
-        // '/',
         clientID
     )
 
