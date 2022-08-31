@@ -5,7 +5,7 @@ jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 describe('Testes de Inicialização e Exibição', () => {
     it('Teste de Componentes da Tela Login', () => {
         const { getByTestId } = render(<App />);
-        expect(getByTestId("Logogoogle")).toBeTruthy();
+        //expect(getByTestId("Logogoogle")).toBeTruthy();
         expect(getByTestId("email")).toBeTruthy();
         expect(getByTestId("senha")).toBeTruthy();
         expect(getByTestId("novasenha")).toBeTruthy();

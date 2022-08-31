@@ -53,13 +53,13 @@ export default function Login({ navigation }) {
             });
     }
 
-    // useEffect(() => {
-    //     firebase.auth().onAuthStateChanged((user) => {
-    //         if (user) {
-    //             navigation.navigate("Task", { idUser: user.uid })
-    //         }
-    //     });
-    // }, []);
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                navigation.navigate("Task", { idUser: user.uid })
+            }
+        });
+    }, []);
 
     return (
         <View style={styles.container}>

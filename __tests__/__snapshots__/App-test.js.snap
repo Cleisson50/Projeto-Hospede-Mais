@@ -457,57 +457,6 @@ exports[`Teste de Snapshot Snapshot de App 1`] = `
                             Login
                           </Text>
                         </View>
-                        <View
-                          accessible={true}
-                          collapsable={false}
-                          focusable={true}
-                          onClick={[Function]}
-                          onResponderGrant={[Function]}
-                          onResponderMove={[Function]}
-                          onResponderRelease={[Function]}
-                          onResponderTerminate={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
-                          style={
-                            Object {
-                              "alignItems": "center",
-                              "backgroundColor": "#4682B4",
-                              "borderRadius": 50,
-                              "flexDirection": "row",
-                              "height": 50,
-                              "justifyContent": "center",
-                              "marginTop": 30,
-                              "opacity": 1,
-                              "width": 300,
-                            }
-                          }
-                          testID="Logogoogle"
-                        >
-                          <Image
-                            source={1}
-                            style={
-                              Object {
-                                "borderRadius": 6,
-                                "height": 30,
-                                "width": 30,
-                              }
-                            }
-                          />
-                          <View>
-                            <Text
-                              style={
-                                Object {
-                                  "color": "#ffffff",
-                                  "fontSize": 16,
-                                  "fontWeight": "bold",
-                                  "marginLeft": 10,
-                                }
-                              }
-                            >
-                              Login com Google
-                            </Text>
-                          </View>
-                        </View>
                         <Text
                           style={
                             Object {
